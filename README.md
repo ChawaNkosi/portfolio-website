@@ -13,7 +13,7 @@ This is my personal portfolio website built using **HTML & CSS**. It includes th
 - Responsive design principles
 
 ## 🚀 Live Preview
-
+View Website: [Chawa Nkosi's Portfolio](https://chawankosi.github.io/portfolio-website/)
 
 ## 📸 Screenshots
 - Landing page: ![image](https://github.com/user-attachments/assets/9ab1b1a8-5c72-44ee-9b5f-dac972f8e5db)
