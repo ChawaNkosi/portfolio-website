@@ -23,4 +23,4 @@ View Website: [Chawa Nkosi's Portfolio](https://chawankosi.github.io/portfolio-w
 ## 📬 Contact
 Email: chawa.nkosi2004@gmail.com
 GitHub: [ChawaNkosi](https://github.com/ChawaNkosi)
-LinkedIn: [Chawanangwa Nkosi](www.linkedin.com/in/chawanangwa-nkosi-7a216a24a)
+LinkedIn: [Chawanangwa_Nkosi](www.linkedin.com/in/chawanangwa-nkosi-7a216a24a)
