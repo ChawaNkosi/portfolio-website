@@ -25,9 +25,9 @@
 <main class="name" id="about">
     <h1>Hey I am Chawanangwa</h1>
     <p> <em>Information Systems Consultant</em></p>
-<button class="CV">
-<a href="CMN_CV.pdf" download>Download CV</a>
-</button> 
+    <button class="CV">
+<a href="CMN CV.pdf" download>Download CV</a>
+</button>
 </main>
 
 </section>
@@ -61,25 +61,80 @@ while my personal learning journey has deepened my knowledge in web development,
 
   
 </div>
-</section>
-
 <section id="contact" class="contact-me">
-<div>
-<h2>Let's Work Together</h2>
-<p><em>Let's grab a coffee</em></p>
-<section class="reach-out" id="form">
-<input type ="text" placeholder="Name & Surname" required></input>
-<input type="email" placeholder="Email" required></input>
-<input type="number" placeholder="Contact Number" required></input>
-</section>
-<input type ="submit" value="Submit"></input>
+  <div>
+    <h2>Let's Work Together</h2>
+    <p><em>Let's grab a coffee</em></p>
 
-<ul class="profiles">
-  <li><a href="https://www.linkedin.com/in/chawanangwa-nkosi-7a216a24a/" id="profile-link"><i class="fa fa-linkedin"></i>LinkedIn</a></li>
-      <li><a href="https://github.com/ChawaNkosi"><i class="fa fa-github"></i>GitHub</a></li>
-      <li><a href="https://www.instagram.com/chawankosi/"><i class="fa fa-instagram"></i>Instagram</a></li>
-      <!--<li><a href="mailto: chawa.nkosi2004@gmail.com"><i class="fas fa-envelope"></i>Send an email</a></li>
-      <li><a href="tel:+27768347820"><i class="fas fa-phone"></i>Call me</a></li>-->
+    <form id="contact-form">
+      <section class="reach-out" id="form">
+        <input 
+          type="text" 
+          placeholder="Name & Surname" 
+          name="names" 
+          required
+        >
+
+        <input 
+          type="email" 
+          placeholder="Email" 
+          name="email" 
+          required
+        >
+
+        <input 
+          type="tel" 
+          placeholder="Contact Number (e.g. 0812345678)" 
+          name="number" 
+          pattern="0[6-8][0-9]{8}" 
+          required
+        >
+      </section>
+
+      <input 
+        type="submit" 
+        value="Submit"
+      >
+    </form>
+    <div id="success-popup" class="popup">
+  <div class="popup-content">
+    <p>✅ Your message has been sent successfully!</p>
+  </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const popup = document.getElementById("success-popup");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // prevent reload
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formspree.io/f/meokabkj", {
+          method: "POST",
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.reset(); // clear the form
+          popup.style.display = "block";
+
+          // Auto-hide after 5 seconds
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 5000);
+        } else {
+          alert("❌ Something went wrong.");
+        }
+      } catch (error) {
+        alert("⚠️ Error submitting form.");
+      }
+    });
+  });
+</script>
+  </div>
 </section>
 
