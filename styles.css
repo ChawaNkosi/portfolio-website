@@ -32,6 +32,11 @@ header, .nav {
   color:black;
   background: white;
 }
+body{
+   font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
 .name{
    /*background: linear-gradient(135deg, #1b1b32);*/
    background-color: #000000;
@@ -64,18 +69,18 @@ display: inline-block;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  text-decoration: none;
   margin-top: 70px;
 }
 
 .CV a{
     color: white;
+    
 }
 
 .Projects{
 background: #02131D;
 color: #CBD5E1;
-height: 100vh;
+
 }
 .Projects h1, h2, p{
 text-align: center;
@@ -185,13 +190,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   font-size: 2.5em; /* Large title font size */
   margin-bottom: 15px;
 }
-
+section.reach-out input {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  height: 35px;
+  border-radius: 3px;
+}
 .reach-out input{
     display: flex;
     margin:auto;
     margin-bottom:15px;
     width:500px;
     height: 35px;
+     border-radius: 3px;
 }
 
 input[type="submit"]{
@@ -229,3 +241,35 @@ input[type="submit"]{
   font-size: 1.2em; /* Adjust icon size */
 margin-right: 15px;;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .popup-content {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  .popup-content p{
+    color: black;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
