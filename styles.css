@@ -228,7 +228,7 @@ input[type="submit"]{
   display: flex; /* Arrange links horizontally */
   justify-content: center; /* Center the links */
   gap: 30px; /* Spacing between the links */
-  margin-top: 50px;
+  /*margin-top: 50px;*/
 }
 
 .profiles a{
