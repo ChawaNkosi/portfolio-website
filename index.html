@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chawa's Portfolio</title>
+  <title>Chawa Nkosi's Portfolio</title>
   <link  rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -25,8 +25,8 @@
 <main class="name" id="about">
     <h1>Hey I am Chawanangwa</h1>
     <p> <em>Information Systems Consultant</em></p>
-    <button class="CV">
-<a href="CMN CV.pdf" download= "CMN CV.pdf">Download CV</a>
+    <button class="CV" id="CV_button">
+<a href="CMN CV.pdf">Download CV</a>
 </button>
 </main>
 
@@ -57,8 +57,11 @@ while my personal learning journey has deepened my knowledge in web development,
     <p>A voting poll system through python</p>
   </div>
 
-  </div>
 
+  <div class="project-item">
+  <a href ="housescope_calc.png"><img src="housescope_calc.png"></a>
+  <p>A home affordability calculator for FNB hackathon</p>
+  </div>
   
 </div>
 <section id="contact" class="contact-me">
@@ -102,6 +105,24 @@ while my personal learning journey has deepened my knowledge in web development,
   </div>
 </div>
 <script>
+ document.addEventListener("DOMContentLoaded", ()=>{
+ const CV_btn = document.getElementById("CV_button");
+ const PDF= 'CMN CV.pdf';
+
+ if(CV_btn){
+  CV_btn.addEventListener("click", (event)=>{
+    const link=document.createElement('a');
+    link.href=PDF;
+    link.download=CV_btn;
+    link.style.display='none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link)
+  })
+ }
+ })
+
+
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
     const popup = document.getElementById("success-popup");
@@ -134,7 +155,6 @@ while my personal learning journey has deepened my knowledge in web development,
       }
     });
   });
-  
 </script>
   </div>
 </section>
@@ -145,6 +165,3 @@ while my personal learning journey has deepened my knowledge in web development,
       <!--<li><a href="mailto: chawa.nkosi2004@gmail.com"><i class="fas fa-envelope"></i>Send an email</a></li>
       <li><a href="tel:+27768347820"><i class="fas fa-phone"></i>Call me</a></li>-->
 </ul>
-
-
-
