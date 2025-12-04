@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins;
+  scroll-behavior: smooth;
 }
 
 header, .nav {
@@ -23,15 +24,36 @@ header, .nav {
   gap: 30px;
 }
 .nav ul li a{
-  color:white;
+  color: white;
   text-decoration: none;
-  font-weight:500;
-  font-size:18px;
+  font-weight: 500;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out; 
+  display: inline-block; 
+  padding-bottom: 5px;
 }
 .nav ul li a:hover{
-  color:black;
-  background: white;
+    transform: translateY(-2px) scale(1.05); 
+  cursor: pointer;
+  color: whitesmoke; 
+  
 }
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #35C5B8;
+    transition: width 0.3s ease-out;
+}
+
+.nav ul li a:hover::after {
+  width:100%;
+}
+
 body{
    font-size: 16px;
   line-height: 1.5;
@@ -70,11 +92,17 @@ display: inline-block;
   border-radius: 8px;
   font-weight: 600;
   margin-top: 70px;
+  
 }
 
 .CV a{
     color: white;
-    
+   text-decoration: none;
+}
+
+.CV:hover{
+  opacity: 5;
+    transform: scale(1.05)
 }
 
 .Projects{
@@ -111,13 +139,14 @@ margin-bottom: 15px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 30px;
-
+  margin-top: 10px;
+  margin-bottom: 30px;
+ 
 }
 
 /* Individual project items */
 .project-item {
-  background-color: #fff;
+  background-color: #ffffffc6;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -125,6 +154,7 @@ margin-bottom: 15px;
   flex-direction: column;
   margin:auto;
   height:auto;
+  margin-left: 5px;
 }
 
 /* Image within the project item */
@@ -177,7 +207,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   color: #fff; /* White text color */
   padding: 80px 20px; /* Top and bottom padding, some horizontal padding */
   text-align: center; /* Center the content horizontally */
-  height: 80vh;
+  height: 83vh;
 }
 
 .contact-me > div { /* Style the direct child div */
@@ -195,7 +225,7 @@ section.reach-out input {
   margin-bottom: 10px;
   font-size: 1rem;
   height: 35px;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 .reach-out input{
     display: flex;
@@ -203,7 +233,7 @@ section.reach-out input {
     margin-bottom:15px;
     width:500px;
     height: 35px;
-     border-radius: 3px;
+    border-radius: 3px;
 }
 
 input[type="submit"]{
@@ -214,6 +244,9 @@ input[type="submit"]{
     color: white;
     width: 100px;
     height:35px;
+}
+input[type="submit"]:hover{
+   transform: scale(1.05)
 }
 
 .contact-me p {
@@ -234,8 +267,8 @@ input[type="submit"]{
 .profiles a{
     color:white;
     margin-right: 20px;
+    text-decoration: none;
 }
-
 /* Style for Font Awesome icons */
 .fa, .fas {
   font-size: 1.2em; /* Adjust icon size */
